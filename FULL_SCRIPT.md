@@ -20,19 +20,20 @@ library(ggfortify)
 library(vegan)
 ```
 
-#Set up environment:
+Set up environment:
 
 ```
 getwd()
 setwd("/R")
 getwd()
 ```
+```
 Colors<-c("Ctrl"="#17202a","ADI1x"="#f1c40f","ADI2x"="#cb4335")
+```
 
+Import data table
 
-#Import data table in R:
-
-
+```
 plasma <- read.table("plasma.txt", header = TRUE, row.names = 1, check.names=F)
-
+```
 
