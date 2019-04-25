@@ -54,7 +54,7 @@ dev.off()
 ADONIS test
 
 ```
-adonis(log.met.plasma ~ PARAM_TX,plasma, method='eu')
+adonis(log.met.plasma ~ PARAMTX,plasma, method='eu')
 ```
 
 
