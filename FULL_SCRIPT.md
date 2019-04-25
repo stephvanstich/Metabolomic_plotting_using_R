@@ -33,12 +33,15 @@ Import data table
 ```
 plasma <- read.table("plasma.txt", header = TRUE, row.names = 1, check.names=F)
 ```
+# Distance matrix and PCA plot
+
 Assign Value to the different part of the table:
 
 ```
 treatment.plasma<-plasma[,1]
 met.plasma<-plasma[,2:180]
 ```
+
 calculate distance matrice and plot the PCA
 ```
 log.met.plasma<-log(met.plasma)
@@ -51,10 +54,15 @@ ggplot(PCA.plasma, aes(PC1, PC2, color = treatment.plasma))  + stat_ellipse(geom
 dev.off()
 ```
 
-ADONIS test
+# ADONIS test
 
 ```
 adonis(log.met.plasma ~ PARAMTX,plasma, method='eu')
 ```
+# Statistics
 
-
+```
+plasma_stat_treatment<-describeBy(plasma,plasma$PARAMTX,mat=TRUE)
+plasma_stat_treatment<-plasma_stat_treatment[-c(1,2,3), ]
+write.table(plasma_stat_treatment,"plasma_stat_treatment.txt",sep="\t")
+```
