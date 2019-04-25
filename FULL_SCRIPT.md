@@ -86,11 +86,12 @@ foldchange1xplasma.subset.sign <- subset(foldchange1xplasma, foldchange1xplasma$
 ```
 Volcano plot
 ```
-pdf("Volcano plot ADI1x plasma.pdf", width = 20)
+pdf("Volcano_plot_ADI1x_plasma.pdf", width = 20)
 ggplot(data=foldchange1xplasma, aes(x=log2(FoldChange), y=-log10(pvalue), colour= FoldChangeValue)) + xlab("log2(foldchange)") + ylab("-log10 (pvalue)") + scale_color_manual(values = Color) + labs(title = "ADI1x Plasma")+theme(text = element_text(size=20))+ geom_point(size=3, alpha = 0.5) + geom_point(data=foldchange1xplasma.subset.sign, aes(x=log2(FoldChange), y=-log10(pvalue), colour = pvalueSignificant), size = 1, shape = 8 ) + scale_color_manual(values = Color) + xlim(c(-7,7)) + ylim(c(0, 13)) + geom_text_repel(data = subset(foldchange1xplasma, abs(log2(FoldChange)) >=2 & pvalue <= 0.005),aes(label = Biochem),color = "Black", size = 5, box.padding = unit(0.35, "lines"),point.padding = unit(0.35, "lines"), segment.size = 0.1, segment.color = "Black", force =2)
 dev.off()
 ```
-Here is the Volcano [plot](Volcano plot ADI1x plasma.pdf)
+Here is the Volcano [plot](Volcano_plot_ADI1x_plasma.pdf)
+
 
 
 
