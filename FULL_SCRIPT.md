@@ -99,10 +99,13 @@ Here is the Volcano [plot](Volcano_plot_ADI1x_plasma.pdf)
 
 ```
 foldchange1xplasma<-foldchange1xplasma[order(foldchange1xplasma$FoldChange), ]
-pdf("pos_neg_plot_ADI1x_plasma.pdf", width = 20)
-barplot(log2(foldchange1xplasma$FoldChange),col=ifelse(foldchange1xplasma$FoldChange > 1,"dodgerblue4","red2"),border = NA)
+pdf("pos_neg_plot_ADI1x_plasma.pdf", width = 5)
+barplot(log2(foldchange1xplasma$FoldChange),col=ifelse(foldchange1xplasma$FoldChange > 1,"dodgerblue4","red2"),border = NA, ylim = c(-5,5))
 dev.off()
 ```
+
+Here is the [graph](pos_neg_plot_ADI1x_plasma.pdf)
+
 
 
 
