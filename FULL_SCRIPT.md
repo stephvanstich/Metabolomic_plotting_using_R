@@ -1,6 +1,6 @@
 # **Welcome to metabolomic stats & plotting using R**
 
-In a folder named /R create a table with the metabolites using the following column(see example [here]())
+In a folder named /R create a table with the metabolites using the following column(see example [here](plasma.txt))
 
 -	First column: PARAM_SUBJECT_ID (sample ID)
 -	Second column: PARAM_TX (Treatment/genotype…)
@@ -33,6 +33,7 @@ Import data table
 ```
 plasma <- read.table("plasma.txt", header = TRUE, row.names = 1, check.names=F)
 ```
+
 # Distance matrix and PCA plot
 
 Assign Value to the different part of the table:
@@ -49,10 +50,11 @@ log.met.plasma<-log(met.plasma)
 PCA.plasma<-prcomp(log.met.plasma)
 
 
-pdf("PCA plasma.pdf", width = 20)
+pdf("PCA_plasma.pdf", width = 20)
 ggplot(PCA.plasma, aes(PC1, PC2, color = treatment.plasma))  + stat_ellipse(geom = "polygon", alpha = 0.2, size = 2 ,linetype =2, aes(fill = treatment.plasma, color = treatment.plasma)) + geom_point(size = 10) + theme(text = element_text(size=30)) + scale_color_manual( values = Colors) + scale_fill_manual ( values=Colors)
 dev.off()
 ```
+Here is the [PCA](PCA_plasma.pdf) plot to obtain.
 
 # ADONIS test
 
