@@ -95,6 +95,16 @@ dev.off()
 Here is the Volcano [plot](Volcano_plot_ADI1x_plasma.pdf)
 
 
+# positive/negative bar plot
+
+```
+foldchange1xplasma<-foldchange1xplasma[order(foldchange1xplasma$FoldChange), ]
+pdf("pos_neg_plot_ADI1x_plasma.pdf", width = 20)
+barplot(log2(foldchange1xplasma$FoldChange),col=ifelse(foldchange1xplasma$FoldChange > 1,"dodgerblue4","red2"),border = NA)
+dev.off()
+```
+
+
 
 
 
