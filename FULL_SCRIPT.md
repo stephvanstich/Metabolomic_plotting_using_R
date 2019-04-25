@@ -1,4 +1,4 @@
-# **Welcome to metabolomic plotting using R**
+# **Welcome to metabolomic stats & plotting using R**
 
 In a folder named /R create a table with the metabolites using the following column(see example [here]())
 
